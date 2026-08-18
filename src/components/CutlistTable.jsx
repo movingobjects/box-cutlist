@@ -21,14 +21,19 @@ function CutlistTable({
           <th>Board</th>
           <th>Diagram</th>
           <th>Dimensions</th>
+          <th>Rabbets</th>
         </tr>
       </thead>
       <tbody>
         {boards.map((board) => (
-          <tr key={board.id}>
+          <tr key={board.name}>
             <td>{board.name}</td>
             <td>
-              <BoardDiagram height={board.height} maxDimension={maxDimension} width={board.width} />
+              <BoardDiagram
+                height={board.height}
+                maxDimension={maxDimension}
+                rabbets={board.rabbets}
+                width={board.width} />
             </td>
             <td>
               {formatDimension(board.width)}
@@ -36,6 +41,24 @@ function CutlistTable({
               {formatDimension(board.height)}
               {' '}
               {unit}
+            </td>
+            <td>
+              {board.rabbets?.length ? (
+                <ul className="cutlist-table__rabbets">
+                  {board.rabbets.map((rabbet) => (
+                    <li key={`${rabbet.edge}-${rabbet.width}-${rabbet.depth}`}>
+                      {rabbet.edge}
+                      {': '}
+                      {formatDimension(rabbet.width)}
+                      {unit}
+                      {' w, '}
+                      {formatDimension(rabbet.depth)}
+                      {unit}
+                      {' d'}
+                    </li>
+                  ))}
+                </ul>
+              ) : '—'}
             </td>
           </tr>
         ))}

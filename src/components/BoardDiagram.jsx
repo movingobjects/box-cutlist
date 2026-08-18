@@ -1,10 +1,11 @@
+import { rabbetRect } from '../lib/cutlist.js';
 import './BoardDiagram.scss';
 
 const MAX_SIZE = 300;
 const PADDING = 6;
 
 function BoardDiagram({
-  width, height, maxDimension,
+  width, height, maxDimension, rabbets = [],
 }) {
   const longest = maxDimension || Math.max(width, height) || 1;
   const scale = MAX_SIZE / longest;
@@ -27,6 +28,22 @@ function BoardDiagram({
         width={rectWidth}
         x={PADDING}
         y={PADDING} />
+      {rabbets.map((rabbet) => {
+        const rect = rabbetRect(rabbet, {
+          width,
+          height,
+        });
+
+        return (
+          <rect
+            key={`${rabbet.edge}-${rabbet.width}-${rabbet.depth}`}
+            className="board-diagram__rabbet"
+            height={rect.height * scale}
+            width={rect.width * scale}
+            x={PADDING + rect.x * scale}
+            y={PADDING + rect.y * scale} />
+        );
+      })}
     </svg>
   );
 }

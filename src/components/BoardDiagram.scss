@@ -7,3 +7,9 @@
   stroke: var(--accent);
   stroke-width: 1.5;
 }
+
+.board-diagram__rabbet {
+  fill: color-mix(in srgb, red 35%, transparent);
+  stroke: red;
+  stroke-width: 1;
+}
