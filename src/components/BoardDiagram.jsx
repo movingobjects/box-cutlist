@@ -28,22 +28,24 @@ function BoardDiagram({
         width={rectWidth}
         x={PADDING}
         y={PADDING} />
-      {rabbets.map((rabbet) => {
-        const rect = rabbetRect(rabbet, {
-          width,
-          height,
-        });
+      <g className="board-diagram__rabbets">
+        {rabbets.map((rabbet) => {
+          const rect = rabbetRect(rabbet, {
+            width,
+            height,
+          });
 
-        return (
-          <rect
-            key={`${rabbet.edge}-${rabbet.width}-${rabbet.depth}`}
-            className="board-diagram__rabbet"
-            height={rect.height * scale}
-            width={rect.width * scale}
-            x={PADDING + rect.x * scale}
-            y={PADDING + rect.y * scale} />
-        );
-      })}
+          return (
+            <rect
+              key={`${rabbet.edge}-${rabbet.width}-${rabbet.depth}`}
+              className="board-diagram__rabbet"
+              height={rect.height * scale}
+              width={rect.width * scale}
+              x={PADDING + rect.x * scale}
+              y={PADDING + rect.y * scale} />
+          );
+        })}
+      </g>
     </svg>
   );
 }

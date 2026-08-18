@@ -8,8 +8,13 @@
   stroke-width: 1.5;
 }
 
+.board-diagram__rabbets {
+  isolation: isolate;
+  opacity: 0.35;
+}
+
 .board-diagram__rabbet {
-  fill: color-mix(in srgb, red 35%, transparent);
+  fill: red;
   stroke: red;
   stroke-width: 1;
 }
