@@ -1,0 +1,28 @@
+.cutlist-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    text-align: left;
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+
+  th {
+    color: var(--text-h);
+    font-weight: 500;
+    font-size: 0.85rem;
+  }
+}
+
+.cutlist-table__id {
+  font-family: var(--mono);
+  color: var(--text-h);
+  font-weight: 500;
+}
+
+.cutlist-table__empty {
+  color: var(--text);
+  font-style: italic;
+}

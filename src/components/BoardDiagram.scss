@@ -1,0 +1,9 @@
+.board-diagram {
+  display: block;
+}
+
+.board-diagram__rect {
+  fill: color-mix(in srgb, var(--accent) 15%, transparent);
+  stroke: var(--accent);
+  stroke-width: 1.5;
+}

@@ -1,0 +1,49 @@
+.cutlist-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cutlist-form__group {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem 1.25rem;
+
+  legend {
+    padding: 0 0.4rem;
+    color: var(--text-h);
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+}
+
+.cutlist-form__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cutlist-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 6rem;
+
+  input, select {
+    font: inherit;
+    color: var(--text-h);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.4rem 0.5rem;
+    width: 100%;
+  }
+}
+
+.cutlist-form__field--unit {
+  min-width: 4.5rem;
+}
+
+.cutlist-form__label {
+  font-size: 0.8rem;
+}
